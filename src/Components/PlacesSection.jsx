@@ -14,6 +14,13 @@ const PlacesSection = () => (
           <p className="text-justify">विठ्ठल रुक्मिणी मंदिर पुरातन प्रति पंढरपूर अशी ओळख आहे दरवर्षी मोठा सप्ताह होतो व या सप्ताहात गावातील केवळ एकाच परिवारातर्फे सात दिवसाचा खर्च केला जातो.
           मंदिर शेळगी गावाच्या मध्यभागी, मुख्य रस्त्याजवळ स्थित असल्यामुळे भाविकांसाठी ते सहज उपलब्ध आहे.</p>
         </div>
+
+         {/* पाझर तलाव */}
+        <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
+          <img src="images/talav.jpg" alt="पाझर तलाव" className="w-full h-48 object-cover rounded-xl mb-4" />
+          <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 12h16"/><path d="M12 4v16"/></svg>पाझर तलाव</h5>
+          <p className="text-justify">गावामध्ये पाझर तलाव आहे.पावसाळ्यात तलावाचे सौंदर्य अधिक खुलते. </p>
+        </div>
         {/* अर्जुनवडी तलाव
         <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
           <img src="images/talav.jpg" alt="अर्जुनवाडी तलाव" className="w-full h-48 object-cover rounded-xl mb-4" />
