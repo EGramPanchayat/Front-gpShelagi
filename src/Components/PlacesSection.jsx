@@ -9,7 +9,7 @@ const PlacesSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* vitthal  Mandir */}
         <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
-          <img src="./images/vitthal.jpg" alt="विठ्ठल मंदिर" className="w-full h-48 object-cover rounded-xl mb-4" />
+          <img src="./images/pandurang.png" alt="विठ्ठल मंदिर" className="w-full h-48 object-cover rounded-xl mb-4" />
           <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2L12 22"/><path d="M6 12L12 2L18 12"/></svg> विठ्ठल मंदिर</h5>
           <p className="text-justify">विठ्ठल रुक्मिणी मंदिर पुरातन प्रति पंढरपूर अशी ओळख आहे दरवर्षी मोठा सप्ताह होतो व या सप्ताहात गावातील केवळ एकाच परिवारातर्फे सात दिवसाचा खर्च केला जातो.
           मंदिर शेळगी गावाच्या मध्यभागी, मुख्य रस्त्याजवळ स्थित असल्यामुळे भाविकांसाठी ते सहज उपलब्ध आहे.</p>
@@ -21,22 +21,26 @@ const PlacesSection = () => (
           <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 12h16"/><path d="M12 4v16"/></svg>पाझर तलाव</h5>
           <p className="text-justify">गावामध्ये पाझर तलाव आहे.पावसाळ्यात तलावाचे सौंदर्य अधिक खुलते. </p>
         </div>
-        {/* अर्जुनवडी तलाव
-        <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
-          <img src="images/talav.jpg" alt="अर्जुनवाडी तलाव" className="w-full h-48 object-cover rounded-xl mb-4" />
-          <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 12h16"/><path d="M12 4v16"/></svg>अर्जुनवाडी तलाव</h5>
-          <p className="text-justify">अर्जुनवाडी तलाव गावाच्या पश्चिम भागात स्थित आहे. पावसाळ्यात तलावाचे सौंदर्य अधिक खुलते, आणि हे ट्रेकिंगसाठी एक लोकप्रिय ठिकाण आहे. आसपास पिकनिक स्पॉट्स उपलब्ध आहेत. पर्यटकांना येथे शांततादायी आणि नैसर्गिक वातावरण अनुभवता येते.</p>
-        </div> */}
-
-
-
-        {/* <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
-          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&q=80" alt="अंबिकानगर जलाशय" className="w-full h-48 object-cover rounded-xl mb-4" />
-          <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg> अंबिकानगर जलाशय</h5>
-          <p className="text-justify">अंबिकानगर जलाशय अकोले शहरापासून सुमारे 10 किमी अंतरावर आहे. हा जलाशय निसर्गप्रेमी आणि साहसी प्रवाशांसाठी आकर्षक ठिकाण आहे. विशेषतः पावसाळ्यात जलाशयाचे सौंदर्य अधिक खुलते. येथे ट्रेकिंगसाठी आणि नैसर्गिक वातावरण अनुभवण्यासाठी पर्यटक येतात.</p>
-        </div> 
        
+
+
         <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
+          <img src="images/bajranbali.jpg" alt="हनुमान मंदिर" className="w-full h-48 object-cover rounded-xl mb-4" />
+          <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 12h16"/><path d="M12 4v16"/></svg>हनुमान मंदिर</h5>
+          <p className="text-justify">शेळगी गावाचे श्रद्धास्थान व धर्म परंपरेनुसार गावाचे रक्षक म्हणून प्रसिद्ध असलेले बजरंग बली हनुमान मंदिर हे गावाच्या अगदी वेशीवर आहे गावात प्रवेश करत असताना या मंदिराचे दर्शन करूनच पुढे जावे लागते. या मंदिराची विशेषता आहे.</p>
+        </div>
+
+
+
+      
+           <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
+          <img src="images/birdev.jpg" alt="बिरदेव मंदिर" className="w-full h-48 object-cover rounded-xl mb-4" />
+          <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg> बिरदेव मंदिर</h5>
+          <p className="text-justify">बिरदेव मंदिर हे गावामध्ये प्रवेश करत असताना मुख्य रस्त्याला लागून आहे या ठिकाणी धनगर समाजाचे श्रद्धास्थान आहे दरवर्षी या ठिकाणी यात्रा भरते व तसेच याच परिसरामध्ये गावाची वैकुंठ भूमी स्थित आहे. या ठिकाणी वृक्ष लागवड व सुशोभीकरण करण्यात आलेली आहे. पाणीपुरवठ्याची टाकी याच ठिकाणी बांधलेली आहे.</p>
+        </div> 
+
+        {/*
+       <div className="bg-white rounded-xl shadow-lg p-4 fade-in flex flex-col justify-between items-center h-full hover:shadow-2xl hover:-translate-y-1 transition">
           <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=400&q=80" alt="कृषी क्षेत्र" className="w-full h-48 object-cover rounded-xl mb-4" />
           <h5 className="text-lg font-bold mb-2 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="8" width="16" height="8" rx="2"/></svg> कृषी क्षेत्र</h5>
           <p className="text-justify">गोमेवाडी विशेषतः कांदा व ऊस उत्पादनासाठी प्रसिद्ध आहे. कांद्याची लागवड मुख्यतः स्थानिक बाजारासाठी आणि हंगामी निर्यातीसाठी केली जाते. तसेच, ऊस हा परिसरातील प्रमुख उत्पन्नाचे पीक असून, तालुक्यामधील सहकारी साखर कारखान्यात ऊसाची आवक गोमेवाडी मार्गे केली जाते.</p>
