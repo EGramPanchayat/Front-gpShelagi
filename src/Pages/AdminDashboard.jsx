@@ -243,10 +243,10 @@ export default function AdminDashboard() {
             />
             <div className="flex flex-col">
               <h1 className="text-lg md:text-xl font-bold tracking-wide whitespace-nowrap">
-                ग्रामपंचायत गोमेवाडी
+                ग्रामपंचायत शेळगी 
               </h1>
               <span className="text-sm md:text-base text-white/80">
-                ता. आटपाडी जि. सांगली
+                ता. निलंगा  जि. लातूर  
               </span>
             </div>
           </div>
