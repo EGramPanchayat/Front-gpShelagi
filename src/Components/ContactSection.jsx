@@ -1,72 +1,134 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { FiPhoneCall } from "react-icons/fi";
 
-const ContactSection = () => (
-  <section id="contact" className="py-20 bg-blue-50">
-    <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl md:text-[2.5rem] font-bold text-green-700 mb-10 relative">संपर्क</h2>
-      <div className="flex flex-col md:flex-row gap-8 items-stretch">
-        
-        {/* Contact Info */}
-        <div className="md:w-1/2 flex flex-col gap-6">
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start">
-            <h5 className="text-xl font-extrabold mb-2 flex items-center gap-2 text-left">
-              {/* Location SVG */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
-              </svg>
-              पत्ता
-            </h5>
-            <p className="text-gray-700 text-left">
-              ग्रामपंचायत शेळगी,<br/>तालुका निलंगा,<br/>जिल्हा लातूर,<br/>महाराष्ट्र - 413521.
-            </p>
-          </div>
+const emergencyContacts = [
+  { emoji: "🚓", title: "पोलीस", number: "१००" },
+  { emoji: "🚑", title: "रूग्णवाहिका", number: "१०८" },
+  { emoji: "🔥", title: "अग्निशमन", number: "१०१" },
+  { emoji: "💉", title: "रक्तपेढी", number: "१०४" },
+  { emoji: "⚡", title: "महापरीषण", number: "१९१२" },
+];
 
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start">
-            <h5 className="text-xl font-extrabold mb-2 flex items-center gap-2 text-left">
-              {/* Contact SVG */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M21 8V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1" />
-                <rect x="3" y="8" width="18" height="13" rx="2" />
-                <path d="M16 2v4" />
-                <path d="M8 2v4" />
-              </svg>
-              संपर्क
-            </h5>
-            <p className="text-gray-700 mb-1 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M4 4h16v16H4z" />
-                <path d="M22 6l-10 7L2 6" />
-              </svg>
-              <a href="mailto:gpshelagi5@gmail.com" className="text-blue-600 font-semibold">
-               gpshelagi5@gmail.com
-              </a>
-            </p>
-          </div>
+const EmergencyContact = () => {
+  const [visibleCards, setVisibleCards] = useState([]);
+  const sectionRef = useRef(null);
+
+  // Animation trigger
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            emergencyContacts.forEach((_, index) => {
+              setTimeout(() => {
+                setVisibleCards((prev) => [...new Set([...prev, index])]);
+              }, index * 150);
+            });
+          } else {
+            setVisibleCards([]);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const sectionEl = sectionRef.current;
+    if (sectionEl) observer.observe(sectionEl);
+    return () => sectionEl && observer.unobserve(sectionEl);
+  }, []);
+
+  return (
+    <section
+      id="emergency"
+      ref={sectionRef}
+      className="w-full pt-10 pb-10 overflow-x-hidden bg-white"
+    >
+      <div className="w-full mx-auto max-w-[1200px] px-4 overflow-x-hidden">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-green-800 pt-10 relative inline-block">
+            आपत्कालीन संपर्क
+            <span className="block w-24 h-1 bg-orange-500 rounded mx-auto mt-2"></span>
+          </h2>
         </div>
 
-        {/* Map */}
-        <div className="md:w-1/2 flex items-center justify-center">
-          <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-            
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3433.2744705156683!2d76.89858387464105!3d18.03022488396956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf1433f5638635%3A0xf0ef94bba9bbc676!2sShelagi%2C%20Maharashtra%20413522!5e1!3m2!1sen!2sin!4v1759514394726!5m2!1sen!2sin"
-                  width="100%"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+        {/* --- MOBILE VIEW (simple list) --- */}
+        <div className="block md:hidden space-y-4 overflow-hidden">
+          {emergencyContacts.map((item, index) => (
+            <div
+              key={index}
+              onClick={() =>
+                (window.location.href = `tel:${item.number.replace(/\D/g, "")}`)
+              }
+              className={`flex justify-between items-center bg-white border border-green-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-500 px-4 py-3 mx-3 cursor-pointer transform ${
+                visibleCards.includes(index)
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
+              {/* Left side */}
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">{item.emoji}</span>
+                <div>
+                  <p className="text-base font-semibold text-green-800">
+                    {item.title}
+                  </p>
+                  <p className="text-lg font-bold text-red-600">{item.number}</p>
+                </div>
+              </div>
 
-
-            <div className="text-center text-sm text-gray-700 mt-1">
-              शेळगी, तालुका निलंगा, जिल्हा लातूर
+              {/* Right side */}
+              <div className="bg-green-600 text-white p-3 rounded-full shadow-md hover:bg-green-700 transition">
+                <FiPhoneCall className="text-xl" />
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* --- DESKTOP VIEW (fancy grid like AamchyaSeva) --- */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:pb-15 lg:grid-cols-5 gap-8 overflow-hidden">
+          {emergencyContacts.map((item, index) => (
+            <div
+              key={index}
+              onClick={() =>
+                (window.location.href = `tel:${item.number.replace(/\D/g, "")}`)
+              }
+              className={`relative transform transition-all duration-700 ease-in-out ${
+                visibleCards.includes(index)
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              } hover:-translate-y-2 hover:shadow-2xl cursor-pointer bg-white border border-green-200 rounded-2xl shadow-md p-6 text-center group`}
+            >
+              {/* Emoji */}
+              <div className="text-5xl mb-4 transform transition-transform duration-300 group-hover:scale-110">
+                {item.emoji}
+              </div>
+
+              {/* Title */}
+              <h4 className="text-xl font-bold text-green-800 mb-3">
+                {item.title}
+              </h4>
+
+              {/* Phone Icon */}
+              <div className="flex justify-center mb-2">
+                <div className="bg-green-600 text-white p-3 rounded-full shadow-md group-hover:bg-green-700 transition">
+                  <FiPhoneCall className="text-2xl" />
+                </div>
+              </div>
+
+              {/* Number */}
+              <p className="text-xl font-semibold text-red-600 mb-3">
+                {item.number}
+              </p>
+
+              {/* Orange underline */}
+              <div className="w-12 h-1 bg-orange-400 mx-auto rounded-full transition-all duration-300 group-hover:w-20"></div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
-export default ContactSection;
+export default EmergencyContact;
