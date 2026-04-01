@@ -242,8 +242,7 @@ const MainPage = () => {
             {/* Places Section */}
       <PlacesSection />
 
-      {/* Contact Section */}
-      <ContactSection />
+  
 
       {/* Footer Section */}
 
