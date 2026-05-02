@@ -245,8 +245,8 @@ export default function AdminDashboard() {
               <h1 className="text-lg md:text-xl font-bold tracking-wide whitespace-nowrap">
                 ग्रामपंचायत शेळगी
               </h1>
-              <span className="text-sm md:text-base text-white/80">
-                ता. निलंगा जि. लातूर
+              <span className="text-sm md:text-base text-white/80 whitespace-nowrap">
+                ता.निलंगा जि.लातूर
               </span>
             </div>
           </div>
